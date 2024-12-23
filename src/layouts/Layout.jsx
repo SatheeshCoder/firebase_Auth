@@ -78,16 +78,16 @@ const Layout = () => {
   const layoutClasses = `theme-${theme.palette.type}`;
 
   // Responsive sidebar logic
-  // useEffect(() => {
-  //   let { settings } = ref.current;
-  //   let sidebarMode = settings.layoutSettings.leftSidebar.mode;
+  useEffect(() => {
+    let { settings } = ref.current;
+    let sidebarMode = settings.layoutSettings.leftSidebar.mode;
 
-  //   if (settings.layoutSettings.leftSidebar.show) {
-  //     let mode = isMdScreen ? "close" : sidebarMode;
-  //     updateSettings({ layoutSettings: { leftSidebar: { mode } } });
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [isMdScreen]);
+    if (settings.layoutSettings.leftSidebar.show) {
+      let mode = isMdScreen ? "close" : sidebarMode;
+      updateSettings({ layoutSettings: { leftSidebar: { mode } } });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMdScreen]);
 
   return (
     <LayoutRoot className={layoutClasses}>
